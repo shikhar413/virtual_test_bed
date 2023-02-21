@@ -300,7 +300,7 @@ num_layers_for_THM = 50      # number of elements in the THM model; for the conv
     to_postprocessors_to_be_preserved = flux_integral
   []
   [source_to_bison]
-    type = MultiAppMeshFunctionTransfer
+    type = MultiAppGeneralFieldShapeEvaluationTransfer
     source_variable = heat_source
     variable = power
     direction = to_multiapp
