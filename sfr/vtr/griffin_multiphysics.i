@@ -379,7 +379,6 @@
     source_boundary = 'plateTop'
     source_variable = disp_x
     variable = disp_x
-    fixed_meshes = true
   []
   [disp_z_from_core_support_plate]
     type = MultiAppNearestNodeTransfer
@@ -387,7 +386,6 @@
     source_boundary = 'plateTop'
     source_variable = disp_z
     variable = disp_z
-    fixed_meshes = true
   []
   [bison_reporter_1]
     type = MultiAppReporterTransfer

@@ -324,7 +324,6 @@ plenum_height        = 782.2e-3  # 778.0e-3
     variable = T_wall_external # SAM variable
     to_multi_app = sam
     displaced_target_mesh = true
-    fixed_meshes = true
   []
   [tcool_from_sam]
     type = MultiAppCoordSwitchNearestNodeTransfer
@@ -332,7 +331,6 @@ plenum_height        = 782.2e-3  # 778.0e-3
     variable = tcool
     from_multi_app = sam
     displaced_source_mesh = true
-    fixed_meshes = true
   []
   [htc_from_sam]
     type = MultiAppCoordSwitchNearestNodeTransfer
@@ -340,7 +338,6 @@ plenum_height        = 782.2e-3  # 778.0e-3
     variable = htc
     from_multi_app = sam
     displaced_source_mesh = true
-    fixed_meshes = true
   []
   [temperature_to_mechanics]
     type = MultiAppCopyTransfer

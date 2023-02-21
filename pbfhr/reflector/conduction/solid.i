@@ -136,18 +136,16 @@ core_heat_flux = 5e3
 
 [Transfers]
   [temperature]
-    type = MultiAppNearestNodeTransfer
+    type = MultiAppGeneralFieldNearestNodeTransfer
     source_variable = temp
     from_multi_app = nek
     variable = nek_temp
-    fixed_meshes = true
   []
   [flux]
-    type = MultiAppNearestNodeTransfer
+    type = MultiAppGeneralFieldNearestNodeTransfer
     source_variable = flux
     to_multi_app = nek
     variable = avg_flux
-    fixed_meshes = true
     source_boundary = 'fluid_solid_interface'
   []
   [flux_integral]
