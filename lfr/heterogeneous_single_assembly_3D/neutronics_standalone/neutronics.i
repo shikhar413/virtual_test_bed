@@ -165,9 +165,9 @@ bid_F_fuel_R7 = 607
 bid_F_helium = 610
 bid_F_heliumc = 611
 bid_F_lead = 620
-bid_F_leadgap = 630
+bid_F_leadgap = 650
 bid_F_clad = 640
-bid_F_duct = 650
+bid_F_duct = 630
 
 bid_G_lead = 710
 bid_G_clad = 720
@@ -284,7 +284,7 @@ totalpower = 3700000.0 # W
 
   # This assembles the 7 pins into an assembly with a duct
   [ASM]
-    type = HexIDPatternedMeshGenerator
+    type = PatternedHexMeshGenerator
     inputs = 'Pin1 Pin2 Pin3 Pin4 Pin5 Pin6 Pin7'
     pattern_boundary = hexagon
     hexagon_size = ${half_asmpitch}
