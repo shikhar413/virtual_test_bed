@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -N lfr_asembly_griffin_rgmb
+#PBS -l select=6:ncpus=48:mpiprocs=24
+#PBS -l walltime=8:00:00
+#PBS -j oe
+#PBS -P neams
+
+NNODES=`cat $PBS_NODEFILE | uniq | wc -l`
+NCPUS=24
+NSLOTS=$((NNODES * NCPUS))
+
+cd $PBS_O_WORKDIR
+
+mpirun -ppn $NCPUS ~/projects/griffin/griffin-opt -i neutronics_rgmb.i --split-mesh $NSLOTS --split-file griffin_mesh_rgmb_split --color off
+mpirun -ppn $NCPUS ~/projects/griffin/griffin-opt -i neutronics_rgmb.i --use-split --split-file griffin_mesh_rgmb_split --color off -log_view | tee griffin_lfr_rgmb_cmfd.out
